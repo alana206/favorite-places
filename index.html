@@ -11,17 +11,18 @@
 
 <body>
     <!-- Header with Navigation -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <header class="navbar navbar-expand-md bg-primary text-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Fortnite Seasons</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <nav class="collapse navbar-collapse" id="navbarNav">
+            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Main navigation">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#seasons">Seasons</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signup.html">Join Battle Bus</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,9 +47,9 @@
             </div>
         </section>
 
-        <section id="seasons" class="py-5">
+        <section id="seasons" class="py-5" aria-labelledby="seasons-heading">
             <div class="container">
-                <h2 class="text-center mb-5">Top Seasons</h2>
+                <h2 id="seasons-heading" class="text-center mb-5">Top Seasons</h2>
                 <div class="row g-4">
                     <!-- Season Cards -->
                     <div class="col-md-4">
@@ -56,17 +57,19 @@
                             <img src="images/Chapter5Season 3.jpg" class="card-img-top" alt="Chapter 5 Season 3">
                             <div class="card-body">
                                 <h5 class="card-title">Chapter 5 Season 3</h5>
-                                <p class="card-text">   
-                                 "Wrecked"<br> This season had a post-apocalyptic, wasteland theme with a focus on vehicles and modifications. Here's a rundown of what it offered:
+                                <p class="card-text">
+                                    "Wrecked"<br>This season had a post-apocalyptic, wasteland theme with a focus on
+                                    vehicles and modifications. Here's a rundown of what it offered:
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card h-100">
-                            <img src="images/chapter 4 season 3 wilds.jpg" class="card-img-top" alt="Chapter 2 Season 2">
+                            <img src="images/chapter 4 season 3 wilds.jpg" class="card-img-top"
+                                alt="Chapter 2 Season 2">
                             <div class="card-body">
-                                <h5 class="card-title">chapter 4 season 3</h5>
+                                <h5 class="card-title">Chapter 4 Season 3</h5>
                                 <p class="card-text">The Wilds</p>
                             </div>
                         </div>
@@ -91,7 +94,6 @@
                     <div class="col-lg-8 mx-auto">
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
-                                <p class="text-center mb-4">
                                 <p>Fortnite has been a huge part of my gaming life. From the thrill of my first Victory
                                     Royale to the excitement of live in-game events, every season has brought something
                                     unique. These three seasons stand out for their innovative gameplay, memorable
@@ -99,14 +101,15 @@
                                 <div class="row g-4">
                                     <div class="col-md-6">
                                         <h5>When I Started</h5>
-                                        <p>Started my journey in Chapter 3...</p>
+                                        <p>Started my journey in season 4 Chapter 3...</p>
                                         <p>It was an exciting time with new mechanics and features.</p>
-                                        
+
                                     </div>
                                     <div class="col-md-6">
                                         <h5>Favorite Memories</h5>
                                         <p>The most memorable moments...</p>
-                                        <p>Participating in live events and collaborating with friends made it unforgettable.</p>   
+                                        <p>Participating in live events and collaborating with friends made it
+                                            unforgettable.</p>
 
                                     </div>
                                 </div>
@@ -118,7 +121,7 @@
         </section>
     </main>
 
-    <footer class="bg-primary text-white py-4">
+    <footer class="bg-primary text-white py-1 fixed-bottom">
         <div class="container text-center">
             <p>&copy; 2025 Fortnite Seasons. Not affiliated with Epic Games.</p>
         </div>
