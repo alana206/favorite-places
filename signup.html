@@ -8,6 +8,24 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Header with Navigation -->
+    <header class="navbar navbar-expand-md bg-primary text-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fortnite Seasons</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Main navigation">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#seasons">Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="signup.html">Join Battle Bus</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container py-5 mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -16,21 +34,21 @@
                         <h2 class="mb-0">🚌 Battle Bus Registration 🎮</h2>
                     </div>
                     <div class="card-body">
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation" name="battle-bus-signup" method="POST" data-netlify="true" novalidate>
+                            <input type="hidden" name="form-name" value="battle-bus-signup">
+                            
                             <!-- Gamer Details -->
                             <div class="mb-4">
                                 <label for="gamerTag" class="form-label">Epic Gamer Tag</label>
                                 <div class="input-group">
                                     <span class="input-group-text">@</span>
-                                    <input type="text" class="form-control" id="gamerTag" required 
-                           placeholder="TiltedTowerPro99">
+                                    <input type="text" class="form-control" id="gamerTag" name="gamerTag" required 
+                                        placeholder="TiltedTowerPro99">
                                 </div>
                             </div>
-
-                            <!-- Favorite Landing Spot -->
                             <div class="mb-4">
                                 <label class="form-label">Favorite Landing Spot</label>
-                                <select class="form-select" required>
+                                <select class="form-select" name="landingSpot" required>
                                     <option value="">Choose wisely...</option>
                                     <option>Tilted Towers</option>
                                     <option>Pleasant Park</option>
@@ -38,51 +56,43 @@
                                     <option>I land at random spots 😅</option>
                                 </select>
                             </div>
-
-                            <!-- Play Style -->
                             <div class="mb-4">
                                 <label class="form-label">Your Play Style</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="playStyle" id="aggressive">
+                                    <input class="form-check-input" type="radio" name="playStyle" id="aggressive" value="aggressive">
                                     <label class="form-check-label" for="aggressive">
                                         Aggressive (I push every fight! 💪)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="playStyle" id="strategic">
+                                    <input class="form-check-input" type="radio" name="playStyle" id="strategic" value="strategic">
                                     <label class="form-check-label" for="strategic">
                                         Strategic (I play for the win 🏆)
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="playStyle" id="casual">
+                                    <input class="form-check-input" type="radio" name="playStyle" id="casual" value="casual">
                                     <label class="form-check-label" for="casual">
                                         Casual (I'm here for the emotes 🕺)
                                     </label>
                                 </div>
                             </div>
-
-                            <!-- Skill Level Slider -->
                             <div class="mb-4">
                                 <label for="skillLevel" class="form-label">Build Skill Level</label>
-                                <input type="range" class="form-range" id="skillLevel" min="0" max="5">
+                                <input type="range" class="form-range" id="skillLevel" name="skillLevel" min="0" max="5">
                                 <div class="d-flex justify-content-between">
                                     <small>Can't build 😅</small>
                                     <small>Bob the Builder 🏗️</small>
                                 </div>
                             </div>
-
-                            <!-- Fun Checkbox -->
                             <div class="mb-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="promise">
+                                    <input class="form-check-input" type="checkbox" id="promise" name="promise" value="agreed">
                                     <label class="form-check-label" for="promise">
                                         I promise not to rage quit when eliminated 😤
                                     </label>
                                 </div>
                             </div>
-
-                            <!-- Submit Button -->
                             <div class="d-grid gap-2">
                                 <button class="btn btn-primary btn-lg" type="submit">
                                     Drop Into Battle! 🪂
