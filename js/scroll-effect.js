@@ -1,22 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const textElement = document.querySelector('.scroll-sticky-text');
-    const heroSection = document.querySelector('.hero-section');
-    const originalOffset = textElement.offsetTop;
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = {
+        text: document.querySelector('.scroll-sticky-text'),
+        hero: document.querySelector('.hero-section')
+    };
     
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        
-        if (scrollPosition > originalOffset && scrollPosition < heroBottom) {
-            textElement.classList.add('fixed');
-        } else {
-            textElement.classList.remove('fixed');
+    if (!elements.text || !elements.hero) return;
+    
+    const config = {
+        originalOffset: elements.text.offsetTop,
+        parallaxSpeed: 0.5
+    };
+
+    const applyParallax = (scrollPos) => {
+        if (scrollPos < config.originalOffset) {
+            const translateY = scrollPos * config.parallaxSpeed;
+            elements.text.style.transform = `translateY(${translateY}px)`;
         }
+    };
+
+    const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const heroBottom = elements.hero.offsetTop + elements.hero.offsetHeight;
         
-        // Parallax effect while scrolling before becoming fixed
-        if (scrollPosition < originalOffset) {
-            const translateY = scrollPosition * 0.5; // Adjust speed by changing multiplier
-            textElement.style.transform = `translateY(${translateY}px)`;
+        elements.text.classList.toggle('fixed', 
+            scrollPosition > config.originalOffset && 
+            scrollPosition < heroBottom
+        );
+        
+        applyParallax(scrollPosition);
+    };
+
+    // Debounced scroll handler
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 });
