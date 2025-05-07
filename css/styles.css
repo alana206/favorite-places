@@ -21,7 +21,7 @@
     --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Global Styles */
+/* Global  */
 body {
     padding-top: 56px;
     background: linear-gradient(115deg, var(--fortnite-blue), var(--fortnite-pink));
